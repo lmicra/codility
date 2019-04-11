@@ -1,3 +1,9 @@
+; https://app.codility.com/programmers/lessons/1-iterations/binary_gap/
+; > nasm -f elf32 binary-gap.s
+; > ld -melf_i386 -o binary-gap binary-gap.o
+; > ./binary-gap 1041
+; > ./binary-gap 32 (not implemented, should return 0)
+
 %define SYS_WRITE 4
 %define SYS_EXIT 1
 %define MAX_BIT 0x40000000
@@ -62,6 +68,10 @@ _count_largest_zero_bin_sequence:
 	pop 	eax
 
 	xor	ebx, ebx ; store the longest sequence of zeros in ebx
+
+	; TODO: ignore all trailing zeros (!!!)
+	; as stated in the problem it wanted gaps no longest zeros sequences 
+	; shift right eax until we find a bit-1
 
 	dec	ecx ; optimization: we don't need the last bit (we know it's bit-1)
 
