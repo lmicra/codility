@@ -1,10 +1,4 @@
 ```bash
-$ ls -l small.out 
--rwxrwxr-x 1 user user 123 abr 12 12:15 small.out
-```
-
-
-```bash
 $ cat hello.s
 ```
 ```asm
@@ -31,9 +25,10 @@ len:	equ $-msg
 ```
 
 ```bash
+$ ls -l small.out 
+-rwxrwxr-x 1 user user 123 abr 12 12:15 small.out
+
 $ xxd -c 8 small.out 
-```
-```
 00000000: 7f45 4c46 0101 0100  .ELF....
 00000008: 0000 0000 0000 0000  ........
 00000010: 0200 0300 0100 0000  ........
